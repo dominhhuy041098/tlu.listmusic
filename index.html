@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,21 +6,15 @@
     <title>Layout1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <script src="main.js"></script>
+    <script src="css/jquery.js"></script>
+    <script src="css/c.js"></script>
 </head>
 <body>
     <div id="menu_top">
         <ul>
+            <li><img src="image/Music-icon.png" height="40px" width="40px">
+            <img src="image/512.png" height="40px" width="40px"></li>
             <li><a href="index.html" title="Trang chủ" class="active">Trang chủ</a></li>
-            <li><a href="tlu.music/baihat.html" title="Bài Hát">Bài Hát</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Nhạc trẻ</a></li>
-                    <li><a href="#">PoP</a></li>
-                    <li><a href="#">Rock</a></li>
-                    <li><a href="#">Nhạc Hàn</a></li>
-                    <li><a href="#">HipHop/Rap</a></li>
-                </ul>
-            </li>
             <li><a href="tlu.music/chude.html" title="Chủ đề">Chủ đề</a>
                 <ul class="sub-menu">
                     <li><a href="#">Tình yêu</a></li>
@@ -38,46 +32,71 @@
                     <li><a href="#">Hàn Quốc</a></li>
                 </ul>
             </li>
+            <li><a href="tlu.music/baihatcuatoi.html" title="Bài hát của tôi">BHCT</a></li>
             <li><a href="#" title="Tài khoản">Tài khoản</a>
                 <ul class="sub-menu">
                     <li><a href="#">Đăng nhập</a></li>
                     <li><a href="#">Đăng ký</a></li>
                 </ul>
             </li>
-            <li><a href="tlu.music/baihatcuatoi.html" title="Bài hát của tôi">bhct</a></li>
+            
             <input type="text" name="search" placeholder="Search.." value=><input type="button" name="TimKiem" onclick="" value="Tìm"></ul>
         
     </div>
-    <div id="banner"></div>
+    <div id="banner">
+        <a href="#" id="next"><img src="image/Next-PNG-Free-Download.png"></a>
+        <a href="#" id="prev"><img src="image/prev.png"></a>
+        <div id="chuyen-slide">
+        <img class="slide" src="image/1542969378496_org.jpg" stt="0">
+        <img class="slide" src="image/maxresdefault.jpg" style="display:none;" stt="1">
+        <img class="slide" src="image/photo-1-1506865123433.jpg" style="display:none;" stt="2">
+        <img class="slide" src="image/twice-15319004332431196403800.jpg" style="display:none;"  stt="3">
+        <img class="slide" src="image/1543458048207_org.jpg" style="display:none;" stt="4">
+        <img id="banner-left" src="image/47428263_2136828009918117_8428869809411719168_n.jpg">
+        <img id="banner-right" src="image/47069806_260933747916215_5243672339861733376_n.jpg">
+    </div>
+</div>
     <div id="main">
         <div id="left">
+            <h1>Bài hát</h1>
             <ul>
-                <li>Bài hát</li>
-                <li>Hot***</li>
+                    <li><a href="#"><img src="image/th (9).jpg"><p>Thằng hề khóc-Dương 565</p></a></li>
+                    <li><a href="#"><img src="image\th (1).jpg"><p>Thương-Quốc Thiên</p></a></li>
+                    <li><a href="#"><img src="image\chiconmotdemcuoi.jpg" ><p>Nếu chỉ còn một đêm cuối-Tuấn Hưng</p></a></li>
+                    <li><a href="#"><img src="image\th (3).jpg"><p>Sai người sai thời điểm</p></a></li>
+                    <li><a href="#"><img src="image\th (4).jpg"><p>Giúp anh trả lời những câu hỏi</p></a></li>
+                    <li><a href="#"><img src="image\th (5).jpg" ><p>Chia cách bình yên-Quốc Thiên</p></a></li>
+                    <li><a href="#"><img src="image\th (6).jpg" ><p>Buồn của anh-Huy Đạt</p></a></li>
+                    <li><a href="#"><img src="image\th (7).jpg" ><p>Buồn không em-Đạt G</p></a></li>
+                    <li><a href="#"><img src="image\anhyeuem.jpg"><p>Anh yêu em-Khắc Việt</p></a></li>
+              
             </ul>
         </div>
-        <div id="right">
-            <div class="ChuDeHot">
-                <h3>Chủ đề Hot>></h3>
-                <ul>
-                    <li><a href="">Tình yêu</a></li>
-                    <li><a href="">Gym</a></li>
-                </ul>
-            </div>
-            <div class="NgheSiHot">
-                <h3>Nghệ sĩ Hot>></h3>
-                    <ul>
-                        <li><a href="">Sơn Tùng</a></li>
-                        <li><a href="">wiz khalifa</a></li>
-                        <li><a href="">twice</a></li>
+        <div id="right"><h1>Chủ Đề Hot>></h1>
+                     <ul>
+                        
+                        <li><a href="#"><img src="image\1542610796887_org (1).jpg" alt=" Nhạc Gym" title="Nhạc Gym" width="330x" height="auto"></a></li>    
+                        <li><a href="#"><img src="image\1542614731501_org.jpg" alt="Nhạc Thúy Nga" title="Nhạc Thúy Nhga" width="330px" height="auto"></a></li>
+                        <li><a href="#"><img src="image\1542614342883_org (1).jpg" alt="Nhạc Remix" title="Nhạc Remix" width="330px" height="auto"></a></li>
                     </ul>
-                </h3>
-            </div>
-            <div class="BXH">
-                <h3>Bảng xếp hạng>></h3>
-            </div>
+                	<h1>Nghệ sĩ Hot>></h1>
+                    <ul>
+                    
+                        <li><a href="#"><img src="image\1478675642158_600.jpg" alt="Đàm Vĩnh Hưng"title="Đàm Vĩnh Hưng"width="330px"height="auto"></a></li>
+                        
+                        <li><a href="#"><img src="image\1506075171981_600.jpg" alt="Bùi Anh Tuấn" title="Bùi Anh Tuấn"width="165px"height="auto"></a></li>
+                        
+                        <li><a href="#"><img src="image\1505103180911_600.jpg" alt="Mr.Siro" title="Mr.Siro"width="165px"height="auto"></a></li>
+
+                        <li><a href="#"><img src="image\sontung.jpg" alt="Sơn Tùng " title="Sơn Tùng" width="165px" height="165px"></a></li>
+
+                        <li><a href="#"><img src="image\vuduykhanh.jpg" alt="Vũ Duy Khánh " title="Vũ Duy Khánh" width="165px" height="165px"></a></li>
+                    </ul>
+       
+            
+           
         </div>
     </div>
-    <div id="footer">Đ? Minh Huy & Đinh Văn Phú __ Đại học Thủy Lợi __ Công Nghệ Web __ 58TH3</div>
+    <div id="footer">Đỗ Minh Huy & Đinh Văn Phú __ Đại học Thủy Lợi __ Công Nghệ Web __ 58TH3</div>
 </body>
 </html>

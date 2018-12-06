@@ -3,6 +3,7 @@ body{
     font-size: 12px;
     width: 1200px;
     margin: 0px auto;
+    border: 1px solid silver;
 }
 
 #menu_top{
@@ -16,24 +17,90 @@ body{
 }
 
 #banner{
-    background: red;
-    height: 280px;
+    height: 350px;
     width: 1200px;
+    position: relative;
+}
+#chuyen-slide{
+    height: 350px;
+    width: 800px;
+    
+    margin-left: 150px;
+}
+.slide{
+    margin-top:42px;
+    width: 800px;
+    height: 350px;
+    left:150px;
+    border-radius: 10px;
 }
 
+#next{
+    text-transform: uppercase;
+    position: absolute;
+    top:170px;
+    right: 250px;
+}
+#next img{
+    width: 60px;
+    height: 60px;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+#next img:hover{
+    transform: translate(25px);
+}
+#prev{
+    text-transform: uppercase;
+    position: absolute;
+    top:170px;
+    left: 150px;
+}
+#prev img{
+    width: 60px;
+    height: 60px;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+#prev img:hover{
+    transform: translate(-25px);
+}
+
+#banner-left{
+    position: absolute;
+    top:42px;
+    left:0px;
+    width: 148px;
+    height: 350px;
+    border-radius: 10px;
+}
+#banner-right{
+    position: absolute;
+    top:42px;
+    right: 0px;
+    width: 248px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+
 #main #left{
-    width: 800px;
+    width: 850px;
     float: left;
     min-height: 400px;
+    
     margin-top:60px;
 }
 
 #main #right{
-    width:400px;
+    width:350px;
     min-height: 400px;
     float: left;
     margin-top:60px;
 }
+
 #footer{
     background: black;
     width: 1200px;
@@ -69,15 +136,16 @@ body{
     line-height: 40px;
     color: #FFF;
     padding: 0px 20px 0px 20px;
+    
 }
 #menu_top ul li a.active{
-    background: rgb(119, 119, 155);
+    background: rgba(202, 43, 83, 0.904);
 }
 
 
 #menu_top ul li a:hover{
-    color: blue;
-    background-color: white;
+    color: rgba(77, 10, 10, 0.712);
+    background-color:rgb(228, 64, 42) ;
 }
 #menu_top ul li:hover .sub-menu{
     display: block;
@@ -98,17 +166,42 @@ input[type="text"] {
 input[type="button"]{
     width: 50px;
     padding: 10px;
-    margin-left:10px;
+    right:10px;
 }
 #main #left ul{
     margin: 0;
     padding:0;
+    margin-left:20px;
 }
 #main #left ul li{
     list-style: none;
-    clear:left;
     border-bottom: 5px solid white;
-    float: left;
     margin-bottom: 20px;
+    float:left;
+    width: 400px;
 }
+#main #left ul li img{
+    width: 200px;
+    height: 200px;
+    margin-left:100px;
+}
+
+#main #right ul{
+    margin: 0;
+    padding:0;
+    margin-left: 20px;
+}
+#main #right ul li{
+    list-style: none;
+    border-bottom: 10px solid white;
+    float: left;
+}
+
+#main #right ul li img:hover,#main #left ul li img:hover{
+    transform: translate(-20px);
+}
+
+
+
+
 

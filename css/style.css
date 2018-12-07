@@ -3,7 +3,6 @@ body{
     font-size: 12px;
     width: 1200px;
     margin: 0px auto;
-    border: 1px solid silver;
 }
 
 #menu_top{
@@ -171,19 +170,19 @@ input[type="button"]{
 #main #left ul{
     margin: 0;
     padding:0;
-    margin-left:20px;
 }
 #main #left ul li{
     list-style: none;
     border-bottom: 5px solid white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-left:20px;
     float:left;
     width: 400px;
 }
 #main #left ul li img{
-    width: 200px;
-    height: 200px;
-    margin-left:100px;
+    width: 180px;
+    height: 100px;
+    float:left;
 }
 
 #main #right ul{
@@ -197,8 +196,22 @@ input[type="button"]{
     float: left;
 }
 
-#main #right ul li img:hover,#main #left ul li img:hover{
+#main #right ul li img:hover{
     transform: translate(-20px);
+}
+#main #left a{
+    text-decoration: none;
+}
+#main #left ul li p{
+    font-size: 14px;
+    color: black;
+}
+
+#main #left ul li:hover p{
+    color: rgb(21, 19, 133);
+}
+.bh:hover{
+    background-color: rgb(252, 147, 147);
 }
 
 

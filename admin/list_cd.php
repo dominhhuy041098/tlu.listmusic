@@ -9,7 +9,7 @@
                 <tr>
                     <th>Mã</th>
                     <th>Chủ đề</th>
-                    <th>Menu</th>
+                  
                     <th>Home</th>
                     <th>Thứ tự</th>
                     <th>Trạng thái</th>
@@ -27,12 +27,7 @@
                             <tr>
                                 <td><?php echo $chude['id'];?></td>
                                 <td><?php echo $chude['ChuDe'];?></td>
-                                <td><?php if($chude['menu']==1){
-                                    echo 'Hiển thị';
-                                }
-                                else{
-                                    echo 'Không hiển thị';
-                                }?></td>
+                             
                                 <td><?php if($chude['home']==1){
                                     echo 'Hiển thị';
                                 }

@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <style type="text/css">
 .loi{
     color: red;
@@ -8,6 +9,8 @@
     <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
         <?php 
             include('../inc/myconnect.php');
+            include('../inc/images_helper.php');
+            include('../inc/function.php');
             if($_SERVER['REQUEST_METHOD']=='POST')
             {
                 $error=array();
@@ -23,12 +26,46 @@
                 else{
                     $ordernum=$_POST['ordernum'];
                 }
-                $menu=$_POST['menu'];
+           
                 $home=$_POST['home'];
                 
                 $status=$_POST['status'];
                 if(empty($error)){
-            $query="INSERT INTO tblNgheSi(NgheSi,menu,home,ordernum,Status) VALUES('{$NgheSi}',$menu,$home,$ordernum,$status)";
+                    //Upload ảnh
+					if(($_FILES['img']['type']!="image/gif")
+                    &&($_FILES['img']['type']!="image/png")
+                    &&($_FILES['img']['type']!="image/jpeg")
+                    &&($_FILES['img']['type']!="image/jpg"))
+                {
+                    $message="File không đúng định dạng";	
+                }
+                elseif ($_FILES['img']['size']>1000000) 
+                {
+                    $message="Kích thước phải nhỏ hơn 1MB";						
+                }
+                elseif ($_FILES['img']['size']=='') 
+                {
+                    $message="Bạn chưa chọn file ảnh";
+                }
+                else
+                {
+                    $img=$_FILES['img']['name'];
+                    $link_img='upload/'.$img;
+                    move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$img);																														
+                    //Xử lý Resize, Crop hình anh
+                    $temp=explode('.',$img);
+                    if($temp[1]=='jpeg' or $temp[1]=='JPEG')
+                    {
+                        $temp[1]='jpg';
+                    }
+                    $temp[1]=strtolower($temp[1]);
+                    $thumb='upload/resized/'.$temp[0].'_thumb'.'.'.$temp[1];
+                    $imageThumb=new Image('../'.$link_img);		
+                    //crop anh
+                    $imageThumb->resize(200,200,'crop');
+                    $imageThumb->save($temp[0].'_thumb','../upload/resized');
+                }
+            $query="INSERT INTO tblNgheSi(NgheSi,anh,anh_thumb,home,ordernum,Status) VALUES('{$NgheSi}','{$link_img}','{$thumb}',$home,$ordernum,$status)";
             $results=mysqli_query($dbc,$query) or die("Query {$query} \n <br/> My SQLERRORS: ".mysqli_error($dbc));
             if(mysqli_affected_rows($dbc)==1){
                 echo "<p style='color:green'>Thêm mới thành công<p>";
@@ -44,7 +81,7 @@
         }
             }
         ?>
-        <form name="frmadd_bh" method="POST">
+        <form name="frmadd_ns" method="POST" enctype="multipart/form-data">
             <?php
                 if(isset($messegers)){
                     echo $messegers;
@@ -61,6 +98,10 @@
                 ?>
             </div>
             <div class="form-group">
+				<label>Ảnh đại diện</label>
+				<input type="file" name="img" value="">
+			</div>
+            <div class="form-group">
                 <label>Thứ Tự</label>
                 <input type="text" name="ordernum" value="<?php if(isset($_POST['ordernum'])){ echo $_POST['ordernum'];} ?>" class="form-control" placeholder="Thứ Tự">
                 <?php
@@ -69,11 +110,7 @@
                     }
                 ?>
             </div>
-            <div class="form-group">
-                <label style="display:block">Menu</label>
-                <label class="radio-inline"><input checked="checked" type="radio" name="menu" value=1>Hien thi</label>
-                <label class="radio-inline"><input type="radio" name="menu" value=0>Khong Hien thi</label>
-            </div>
+           
             <div class="form-group">
                 <label style="display:block">Home</label>
                 <label class="radio-inline"><input checked="checked" type="radio" name="home" value=1>Hien thi</label>

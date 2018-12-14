@@ -11,17 +11,17 @@
             if($_SERVER['REQUEST_METHOD']=='POST')
             {
                 $error=array();
-                if(empty($_POST['Ten'])){
-                    $error[]='Ten';
+                if(empty($_POST['title'])){
+                    $error[]='title';
                 }
                 else{
-                    $Ten=$_POST['Ten'];
+                    $title=$_POST['title'];
                 }
-                if(empty($_POST['Link'])){
-                    $error[]='Link';
+                if(empty($_POST['link'])){
+                    $error[]='link';
                 }
                 else{
-                    $Link=$_POST['Link'];
+                    $link=$_POST['link'];
                 }
                 if(empty($_POST['ordernum'])){
                     $error[]='ordernum';
@@ -32,7 +32,7 @@
                 
                 $status=$_POST['status'];
                 if(empty($error)){
-            $query="INSERT INTO tblvideo(Link,ordernum,status,Ten) VALUES('{$Link}',$ordernum,$status,'{$Ten}')";
+            $query="INSERT INTO tblvideo(link,ordernum,status,title) VALUES('{$link}',$ordernum,$status,'{$title}')";
             $results=mysqli_query($dbc,$query);
             if(mysqli_affected_rows($dbc)==1){
                 echo "<p style='color:green'>Thêm mới thành công<p>";
@@ -42,16 +42,16 @@
                 echo "<p class='loi'>Thêm mới không thành công </p>";
             }
 
-            $_POST['Ten']='';
+            $_POST['title']='';
             $_POST['ordernum']='';
-            $_POST['Link']='';
+            $_POST['link']='';
         }
         else {
             $messegers="<p class='loi'>Bạn phải nhập đầy đủ thông tin </p>" ;
         }
             }
         ?>
-        <form name="frmadd_bh" method="POST">
+        <form name="frmadd_video" method="POST">
             <?php
                 if(isset($messegers)){
                     echo $messegers;
@@ -60,9 +60,9 @@
             <h3>Thêm mới video</h3>
             <div class="form-group">
                 <label>Tên</label>
-                <input type="text" name="Ten" value="<?php if(isset($_POST['Ten'])){ echo $_POST['Ten'];} ?>" class="form-control" placeholder="Tên">
+                <input type="text" name="title" value="<?php if(isset($_POST['title'])){ echo $_POST['title'];} ?>" class="form-control" placeholder="Tên">
                 <?php
-                    if(isset($error) && in_array('Ten',$error)){
+                    if(isset($error) && in_array('title',$error)){
                         echo "<p class='loi'>Bạn chưa nhập video </p>";
                     }
                 ?>
@@ -77,10 +77,10 @@
                 ?>
             </div>
             <div class="form-group">
-                <label>Link</label>
-                <input type="text" name="Link" value="<?php if(isset($_POST['Link'])){ echo $_POST['Link'];} ?>" class="form-control" placeholder="Tên">
+                <label>link</label>
+                <input type="text" name="link" value="<?php if(isset($_POST['link'])){ echo $_POST['link'];} ?>" class="form-control" placeholder="Link">
                 <?php
-                    if(isset($error) && in_array('Link',$error)){
+                    if(isset($error) && in_array('link',$error)){
                         echo "<p class='loi'>Bạn chưa nhập link video </p>";
                     }
                 ?>

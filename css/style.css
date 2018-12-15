@@ -177,7 +177,7 @@ input[type="button"]{
     margin-bottom: 10px;
     margin-left:20px;
     float:left;
-    width: 400px;
+    width: 390px;
 }
 #main #left ul li img{
     width: 180px;
@@ -214,7 +214,16 @@ input[type="button"]{
     background-color: rgb(252, 147, 147);
 }
 
-
+#main #left #left3,#main #left #left2,#main #left #left1{
+    clear: left;
+}
+#main #left .list-video{
+    height:150px;
+            width:838px;
+            border:1px solid rgba(20, 18, 18, 0.856);
+            overflow:auto;
+            background-color: rgba(122, 112, 112, 0.397);
+}
 
 
 

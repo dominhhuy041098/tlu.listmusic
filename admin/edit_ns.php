@@ -36,7 +36,7 @@
                     $ordernum=$_POST['ordernum'];
                 }
             
-                $home=$_POST['home'];
+            
                 
                 $status=$_POST['status'];
                 if(empty($error)){
@@ -86,7 +86,7 @@
                         
                 $query="UPDATE tblnghesi SET NgheSi='{$nghesi}',
                 anh='{$link_img}',
-                anh_thumb='{$thumb}',home={$home},ordernum={$ordernum},status={$status} WHERE id={$id}";
+                anh_thumb='{$thumb}',ordernum={$ordernum},status={$status} WHERE id={$id}";
             $results=mysqli_query($dbc,$query);
             kt_query($results,$query);
             if(mysqli_affected_rows($dbc)==1){
@@ -102,11 +102,11 @@
             $messegers="<p class='loi'>Bạn phải nhập đầy đủ thông tin </p>" ;
         }
             }
-        $query_id="SELECT NgheSi,anh,anh_thumb,home,ordernum,Status FROM tblnghesi WHERE id={$id};";
+        $query_id="SELECT NgheSi,anh,anh_thumb,ordernum,Status FROM tblnghesi WHERE id={$id};";
         $result_id=mysqli_query($dbc,$query_id);
         kt_query($result_id,$query_id);
         if(mysqli_num_rows($result_id)==1){
-            list($nghesi,$anh,$anh_thumb,$home,$ordernum,$status)=mysqli_fetch_array($result_id,MYSQLI_NUM);
+            list($nghesi,$anh,$anh_thumb,$ordernum,$status)=mysqli_fetch_array($result_id,MYSQLI_NUM);
         }
         else{
             $messegers="<p class='required'>ID nghệ sĩ không tồn tại</p>";
@@ -145,23 +145,6 @@
                 ?>
             </div>
           
-            <div class="form-group">
-                <label style="display:block">Home</label>
-                <?php
-                    if($home==1){
-                        ?>
-                         <label class="radio-inline"><input checked="checked" type="radio" name="home" value=1>Hien thi</label>
-                        <label class="radio-inline"><input type="radio" name="home" value=0>Khong Hien thi</label>
-                    <?php
-                    }
-                    else{
-                        ?> <label class="radio-inline"><input  type="radio" name="hỏm" value=1>Hien thi</label>
-                        <label class="radio-inline"><input checked="checked" type="radio" name="home" value=0>Khong Hien thi</label>
-                        <?php    
-                    } 
-                ?>
-
-            </div>
             <div class="form-group">
                 <label style="display:block">Trangthai</label>
                 <?php

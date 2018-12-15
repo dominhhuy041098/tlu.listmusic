@@ -1,7 +1,7 @@
 <div id="footer">
-            <p>Đỗ Minh Huy</p>
+            <p>Đỗ Minh Huy - Đại học Thủy Lợi</p>
         </div>
-    </div>
+ 
     <!-- /#wrapper -->
 
     <!-- jQuery -->

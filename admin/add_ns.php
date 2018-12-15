@@ -1,4 +1,4 @@
-<?php error_reporting(0); ?>
+<?php error_reporting(0);?>
 <style type="text/css">
 .loi{
     color: red;
@@ -27,7 +27,7 @@
                     $ordernum=$_POST['ordernum'];
                 }
            
-                $home=$_POST['home'];
+         
                 
                 $status=$_POST['status'];
                 if(empty($error)){
@@ -53,19 +53,20 @@
                     $link_img='upload/'.$img;
                     move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$img);																														
                     //Xử lý Resize, Crop hình anh
-                    $temp=explode('.',$img);
-                    if($temp[1]=='jpeg' or $temp[1]=='JPEG')
-                    {
-                        $temp[1]='jpg';
-                    }
-                    $temp[1]=strtolower($temp[1]);
-                    $thumb='upload/resized/'.$temp[0].'_thumb'.'.'.$temp[1];
-                    $imageThumb=new Image('../'.$link_img);		
-                    //crop anh
-                    $imageThumb->resize(200,200,'crop');
-                    $imageThumb->save($temp[0].'_thumb','../upload/resized');
+							$temp=explode('.',$img);
+							if($temp[1]=='jpeg' or $temp[1]=='JPEG')
+							{
+								$temp[1]='jpg';
+							}
+							$temp[1]=strtolower($temp[1]);
+							$thumb='upload/resized/'.$temp[0].'_thumb'.'.'.$temp[1];
+							$imageThumb=new Image('../'.$link_img);
+							
+							$imageThumb->resize(200,200,'crop');
+							$imageThumb->save($temp[0].'_thumb','../upload/resized');
+                        
                 }
-            $query="INSERT INTO tblNgheSi(NgheSi,anh,anh_thumb,home,ordernum,Status) VALUES('{$NgheSi}','{$link_img}','{$thumb}',$home,$ordernum,$status)";
+            $query="INSERT INTO tblNgheSi(NgheSi,anh,anh_thumb,ordernum,Status) VALUES('{$NgheSi}','{$link_img}','{$thumb}',$ordernum,$status)";
             $results=mysqli_query($dbc,$query) or die("Query {$query} \n <br/> My SQLERRORS: ".mysqli_error($dbc));
             if(mysqli_affected_rows($dbc)==1){
                 echo "<p style='color:green'>Thêm mới thành công<p>";
@@ -111,11 +112,7 @@
                 ?>
             </div>
            
-            <div class="form-group">
-                <label style="display:block">Home</label>
-                <label class="radio-inline"><input checked="checked" type="radio" name="home" value=1>Hien thi</label>
-                <label class="radio-inline"><input type="radio" name="home" value=0>Khong Hien thi</label>
-            </div>
+            
             <div class="form-group">
                 <label style="display:block">Trangthai</label>
                 <label class="radio-inline"><input checked="checked" type="radio" name="status" value=1>Hien thi</label>

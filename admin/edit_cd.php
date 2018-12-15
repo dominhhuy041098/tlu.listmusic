@@ -35,11 +35,11 @@
                     $ordernum=$_POST['ordernum'];
                 }
           
-                $home=$_POST['home'];
+            
                 
                 $status=$_POST['status'];
                 if(empty($error)){
-                $query="UPDATE tblchude SET ChuDe='{$chuDe}',home={$home},ordernum={$ordernum},Status={$status} WHERE id={$id}";
+                $query="UPDATE tblchude SET ChuDe='{$chuDe}',ordernum={$ordernum},Status={$status} WHERE id={$id}";
             $results=mysqli_query($dbc,$query);
             if(mysqli_affected_rows($dbc)==1){
                 echo "<p style='color:green'>Sửa thành công<p>";
@@ -54,11 +54,11 @@
             $messegers="<p class='loi'>Bạn phải nhập đầy đủ thông tin </p>" ;
         }
             }
-        $query_id="SELECT ChuDe,home,ordernum,Status FROM tblchude WHERE id={$id};";
+        $query_id="SELECT ChuDe,ordernum,Status FROM tblchude WHERE id={$id};";
         $result_id=mysqli_query($dbc,$query_id);
         kt_query($result_id,$query_id);
         if(mysqli_num_rows($result_id)==1){
-            list($chuDe,$home,$ordernum,$status)=mysqli_fetch_array($result_id,MYSQLI_NUM);
+            list($chuDe,$ordernum,$status)=mysqli_fetch_array($result_id,MYSQLI_NUM);
         }
         else{
             $messegers="<p class='required'>ID chủ đề không tồn tại</p>";
@@ -90,21 +90,7 @@
                 ?>
             </div>
           
-            <div class="form-group">
-                <label style="display:block">Home</label>
-                <?php
-                    if($home==1){
-                        ?>
-                         <label class="radio-inline"><input checked="checked" type="radio" name="home" value=1>Hien thi</label>
-                        <label class="radio-inline"><input type="radio" name="home" value=0>Khong Hien thi</label>
-                    <?php
-                    }
-                    else{
-                        ?> <label class="radio-inline"><input  type="radio" name="home" value=1>Hien thi</label>
-                        <label class="radio-inline"><input checked="checked" type="radio" name="home" value=0>Khong Hien thi</label>
-                        <?php    
-                    } 
-                ?>
+           
 
             </div>
             <div class="form-group">

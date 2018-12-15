@@ -4,7 +4,7 @@
                         <a href="index.php" style="color:#fff;"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>                    
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_cd"><i class="fa fa-fw fa-file"></i> Chủ Đề <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_cd"><i class="fa fa-fw fa-file"></i> Chủ đề <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_cd" class="collapse">
                             <li>
                                 <a href="add_cd.php">Thêm mới</a>
@@ -32,7 +32,7 @@
                                 <a href="add_bh.php">Thêm mới</a>
                             </li>
                             <li>
-                                <a href="#">Danh sách</a>
+                                <a href="list_bh.php">Danh sách</a>
                             </li>
                         </ul>
                     </li>
@@ -47,17 +47,17 @@
                             </li>
                         </ul>
                     </li>
+					
 					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_cd"><i class="fa fa-fw fa-file"></i> Hỗ trợ trực tuyến <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_cd" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_u"><i class="fa fa-fw fa-file"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_u" class="collapse">
                             <li>
-                                <a href="#">Thêm mới</a>
+                                <a href="add_user.php">Thêm mới</a>
                             </li>
                             <li>
-                                <a href="#">Danh sách</a>
+                                <a href="list_user.php">Danh sách</a>
                             </li>
                         </ul>
-                    </li>
-									
+                    </li>				
                 </ul>
             </div>

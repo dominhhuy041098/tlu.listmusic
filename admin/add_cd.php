@@ -23,12 +23,12 @@
                 else{
                     $ordernum=$_POST['ordernum'];
                 }
-                $home=$_POST['home'];
+           
                 
                 $status=$_POST['status'];
                 if(empty($error)){
                     
-            $query="INSERT INTO tblchude(ChuDe,home,ordernum,Status) VALUES('{$chuDe}',$home,$ordernum,$status)";
+            $query="INSERT INTO tblchude(ChuDe,ordernum,Status) VALUES('{$chuDe}',$ordernum,$status)";
             $results=mysqli_query($dbc,$query);
             if(mysqli_affected_rows($dbc)==1){
                 echo "<p style='color:green'>Thêm mới thành công<p>";
@@ -73,11 +73,7 @@
             </div>
            
             
-            <div class="form-group">
-                <label style="display:block">Home</label>
-                <label class="radio-inline"><input checked="checked" type="radio" name="home" value=1>Hien thi</label>
-                <label class="radio-inline"><input type="radio" name="home" value=0>Khong Hien thi</label>
-            </div>
+            
             <div class="form-group">
                 <label style="display:block">Trangthai</label>
                 <label class="radio-inline"><input checked="checked" type="radio" name="status" value=1>Hien thi</label>

@@ -10,7 +10,7 @@
                     <th>Mã</th>
                     <th>Nghệ sĩ</th>
 					<th>Ảnh</th>
-                    <th>Home</th>
+              
                     <th>Thứ tự</th>
                     <th>Trạng thái</th>
                     <th>Sửa</th>
@@ -60,12 +60,7 @@
                                 <td><?php echo $nghesi['id'];?></td>
                                 <td><?php echo $nghesi['NgheSi'];?></td>
 								<td><img width="50px" src="../<?php echo $nghesi['anh'];?>"/></td>
-                                <td><?php if($nghesi['home']==1){
-                                    echo 'Hiển thị';
-                                }
-                                else{
-                                    echo 'Không hiển thị';
-                                }?></td>
+                               
                                 <td><?php echo $nghesi['ordernum'];?></td>
                                 <td><?php if($nghesi['status']==1){
                                     echo 'Hiển thị';

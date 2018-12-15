@@ -1,3 +1,7 @@
+<?php session_start();
+if(!isset($_SESSION['uid'])){
+    header('Location: login.php');
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,17 +57,17 @@
                 
                 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Xin chào:&nbsp;admin <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Xin chào:&nbsp;<?php if(isset($_SESSION['taikhoan'])){echo $_SESSION['taikhoan'];}?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>                        
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i>Đổi mật khẩu</a>
+                            <a href="doimatkhau.php"><i class="fa fa-fw fa-gear"></i>Đổi mật khẩu</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="thoat.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

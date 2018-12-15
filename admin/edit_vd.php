@@ -74,7 +74,7 @@
                     echo $messegers;
                 }
             ?>
-            <h3>Sửa thông tin video: <?php if(isset($video)){ echo $video;} ?></h3>
+            <h3>Sửa thông tin video: <?php if(isset($title)){ echo $title;} ?></h3>
             <div class="form-group">
                 <label>Video</label>
                 <input type="text" name="title" value="<?php if(isset($title)){ echo $title;} ?>" class="form-control" placeholder="Tên">

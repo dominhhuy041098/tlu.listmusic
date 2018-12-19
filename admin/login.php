@@ -76,7 +76,7 @@ if(isset($_SESSION['uid']))
 					</tr>
 					<tr>
 						<td><strong>Tài khoản</strong></td>
-						<td><input type="text" name="taikhoan" value="" placeholder="Tài khoản">
+						<td><input type="text" name="taikhoan" value="huy" placeholder="Tài khoản">
 							<?php 
 								if(isset($errors) && in_array('taikhoan',$errors))
 								{
@@ -87,7 +87,7 @@ if(isset($_SESSION['uid']))
 					</tr>
 					<tr>
 						<td><strong>Mật khẩu</strong></td>
-						<td><input type="password" name="matkhau" value="" placeholder="*****">	
+						<td><input type="password" name="matkhau" value="123" placeholder="*****">	
 						<?php 
 								if(isset($errors) && in_array('matkhau',$errors))
 								{

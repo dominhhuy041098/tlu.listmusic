@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Danh sách <small>bình luận</small>
+                            Quản trị <small>Ứng dụng</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">

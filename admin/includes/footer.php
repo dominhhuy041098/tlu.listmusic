@@ -1,7 +1,11 @@
+</div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
 <div id="footer">
             <p>Đỗ Minh Huy - Đại học Thủy Lợi</p>
         </div>
- 
+        </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->

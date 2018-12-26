@@ -19,7 +19,7 @@
             <li><img src="image/Music-icon.png" height="40px" width="40px">
             <img src="image/512.png" height="40px" width="40px"></li>
             <li><a href="index.php" title="Trang chủ" class="active">Trang chủ</a></li>
-            <li><a href="#" title="Bài hát">Bài hát</a>
+            <li><a href="baihat.php" title="Bài hát">Bài hát</a>
                 <ul class="sub-menu">
                     <li><a href="#">Mới</a></li>
                     <li><a href="#">HOT***</a></li>

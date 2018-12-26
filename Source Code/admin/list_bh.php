@@ -23,7 +23,7 @@
             <tbody>
                 <?php
                     //đặt số bản ghi cần hiện thị
-					$limit=7;
+					$limit=4;
 					//Xác định vị trí bắt đầu
 					if(isset($_GET['s']) && filter_var($_GET['s'],FILTER_VALIDATE_INT,array('min_range'=>1)))
 					{

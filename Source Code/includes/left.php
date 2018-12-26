@@ -1,15 +1,22 @@
 <div id="left">
             <div id="left1">
             <h1>Bài hát New & HOT*** >></h1>
-            <ul>
-                    <li class="bh"><a href="#"><img src="image/th (9).jpg"><p><strong>Thằng hề khóc</strong><br/>Dương 565</p></a></li>
-                    <li class="bh"><a href="#"><img src="image/th (1).jpg"><p><strong>Thương</strong><br/>Quốc Thiên</p></a></li>
-                    <li class="bh"><a href="#"><img src="image/chiconmotdemcuoi.jpg" ><p><strong>Nếu chỉ còn một đêm cuối</strong><br/>Tuấn Hưng</p></a></li>
-                    <li class="bh"><a href="#"><img src="image/th (3).jpg"><p><strong>Sai người sai thời điểm</strong></p></a></li>
-                    <li class="bh"><a href="#"><img src="image/th (5).jpg" ><p><strong>Chia cách bình yên</strong><br/>Quốc Thiên</p></a></li>
-                    <li class="bh"><a href="#"><img src="image/th (6).jpg" ><p><strong>Buồn của anh</strong><br/>Huy Đạt</p></a></li>
-                    <li class="bh"><a href="#"><img src="image/th (7).jpg" ><p><strong>Buồn không em</strong><br/>Đạt G</p></a></li>
-                    <li class="bh"><a href="#"><img src="image/anhyeuem.jpg"><p><strong>Anh yêu em</strong><br/>Khắc Việt</p></a></li>
+                    <?php
+                        $query_baihat="Select * FROM tblbaihat ORDER BY ordernum DESC LIMIT 10";
+                        $results_baihat=mysqli_query($dbc,$query_baihat);
+                        kt_query($results_baihat,$query_baihat);
+                    ?>
+                <ul>
+                    <?php 
+                         while ($baihat=mysqli_fetch_array($results_baihat,MYSQLI_ASSOC)) 
+                         { 
+                         ?>
+                          <li class="bh"><a href="chitietbh.php?id=<?php echo $baihat['id']; ?>"><img src="<?php echo $baihat['anh'];?>"><p><strong><?php echo $baihat['BaiHat'];?></strong><br/>Ca sĩ: <?php echo $baihat['NgheSi'];?><br/>Lượt Nghe: <?php echo $baihat['LuotNghe']?></p></a></li>                       
+                         <?php 
+                         }
+                     ?>          
+                
+                    
             
             </ul></div>
           
@@ -50,16 +57,25 @@
                                         
                 					<div id="left3">
                 			              <h1>Bảng xếp hạng>></h1>
-            <ul>
-                <li class="bh"><a href="#"><img src="image/th (9).jpg"><p><strong>Thằng hề khóc</strong><br/>Dương 565</p></a></li>
-                <li class="bh"><a href="#"><img src="image/th (1).jpg"><p><strong>Thương</strong><br/>Quốc Thiên</p></a></li>
-                <li class="bh"><a href="#"><img src="image/chiconmotdemcuoi.jpg" ><p><strong>Nếu chỉ còn một đêm cuối</strong><br/>Tuấn Hưng</p></a></li>
-                <li class="bh"><a href="#"><img src="image/th (3).jpg"><p><strong>Sai người sai thời điểm</strong></p></a></li>
-             
-            </ul></div>
-                       					
+                                          <?php
+                        $query_bxh="Select * FROM tblbaihat ORDER BY LuotNghe DESC LIMIT 6";
+                        $results_bxh=mysqli_query($dbc,$query_bxh);
+                        kt_query($results_bxh,$query_bxh);
+                    ?>
+                <ul>
+                    <?php 
+                         while ($bxh=mysqli_fetch_array($results_bxh,MYSQLI_ASSOC)) 
+                         { 
+                         ?>
+                          <li class="bh"><a href="chitietbh.php?id=<?php echo $bxh['id']; ?>"><img src="<?php echo $bxh['anh'];?>"><p><strong><?php echo $bxh['BaiHat'];?></strong><br/>Ca sĩ: <?php echo $bxh['NgheSi'];?><br/>Lượt Nghe: <?php echo $bxh['LuotNghe']?></p></a></li>                       
+                         <?php 
+                         }
+                     ?>          
                 
-
+                    
+            
+            </ul></div>
+            
             
             
         </div>

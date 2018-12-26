@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 19, 2018 lúc 01:46 PM
+-- Thời gian đã tạo: Th12 26, 2018 lúc 02:21 PM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 5.6.38
 
@@ -46,7 +46,18 @@ CREATE TABLE `tblbaihat` (
 --
 
 INSERT INTO `tblbaihat` (`id`, `BaiHat`, `ChuDe`, `NgheSi`, `ordernum`, `status`, `noidung`, `anh`, `anh_thumb`, `LuotNghe`) VALUES
-(14, 'Anh Đang Ở Nơi Đâu', 'Tình yêu', 'Tóc Tiên', 2, 1, 'upload/Anh-Dang-O-Dau-Day-Anh-Huong-Giang.mp3', 'upload/512.png', 'upload/resized/512_thumb.png', 0);
+(20, 'What Do You Mean', 'Âu Mỹ', 'Justin biebers', 10, 1, 'upload/What Do You Mean Acoustic Vers... - Justin Bieber (NhacPro.net).mp3', 'upload/j.jpg', 'upload/resized/j_thumb.jpg', 0),
+(21, 'Baby', 'Âu Mỹ', 'Justin biebers', 2, 1, 'upload/Baby - Justin Bieber Ludacris (NhacPro.net).mp3', 'upload/220px-Babycoverart.jpg', 'upload/resized/220px-Babycoverart_thumb.jpg', 0),
+(23, 'Rồi anh sẽ quên', 'Việt Nam', 'Đàm Vĩnh Hưng', 1, 1, 'upload/Roi Anh Se Quen New Version Re... - Dam Vinh Hung (NhacPro.net).mp3', 'upload/512 - Copy.png', 'upload/resized/512 - Copy_thumb.png', 0),
+(24, 'Chạy ngay đi', 'EDM', 'Sơn Tùng', 6, 1, 'upload/Chay Ngay Di Onionn Remix - Son Tung M TP (NhacPro.net)_2.mp3', 'upload/maxresdefault (1).jpg', 'upload/resized/maxresdefault (1)_thumb.jpg', 0),
+(25, 'Thanh xuân của chúng ta', 'Tình yêu', 'Bùi Anh Tuấn', 4, 1, 'upload/Thanh Xuan Cua Chung Ta - Bui Anh Tuan Bao Anh (NhacPro.net).mp3', 'upload/maxresdefault.jpg', 'upload/resized/maxresdefault_thumb.jpg', 0),
+(26, 'Siren', 'Coffee Time', 'Sunmi', 10, 1, 'upload/Siren - Sunmi (NhacPro.net).mp3', 'upload/maxresdefault (3).jpg', 'upload/resized/maxresdefault (3)_thumb.jpg', 0),
+(27, 'Tan', 'Coffee Time', 'Tuấn Hưng', 9, 1, 'upload/Tan - Tuan Hung (NhacPro.net).mp3', 'upload/maxresdefault (4).jpg', 'upload/resized/maxresdefault (4)_thumb.jpg', 0),
+(28, 'Lip and Hip ', 'EDM', 'Hyuna', 10, 1, 'upload/LipHip3DAudio-HyunA-5468910.mp3', 'upload/maxresdefault (5).jpg', 'upload/resized/maxresdefault (5)_thumb.jpg', 0),
+(29, 'Gashina', 'Gym', 'Sunmi', 11, 1, 'upload/GashinaAreiaRemix-Summi-5302721.mp3', 'upload/original.png', 'upload/resized/original_thumb.png', 0),
+(30, 'Far away', 'Coffee Time', 'Karik', 15, 1, 'upload/FarAway-KayTranTronieNgo-5810154.mp3', 'upload/maxresdefault (6).jpg', 'upload/resized/maxresdefault (6)_thumb.jpg', 0),
+(31, 'Thành phố xa lạ', 'Coffee Time', 'Tóc Tiên', 34, 1, 'upload/ThanhPhoXaLa-PhungKhanhLinh-5791553.mp3', 'upload/ttt.jpg', 'upload/resized/ttt_thumb.jpg', 0),
+(32, '24h', 'Coffee Time', 'Mr.Siro', 34, 1, 'upload/ThanhPhoXaLa-PhungKhanhLinh-5791553.mp3', 'upload/1544596919931.jpg', 'upload/resized/1544596919931_thumb.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -205,19 +216,19 @@ ALTER TABLE `tblvideo`
 -- AUTO_INCREMENT cho bảng `tblbaihat`
 --
 ALTER TABLE `tblbaihat`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT cho bảng `tblchude`
 --
 ALTER TABLE `tblchude`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `tblnghesi`
 --
 ALTER TABLE `tblnghesi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `tbluser`
@@ -229,7 +240,7 @@ ALTER TABLE `tbluser`
 -- AUTO_INCREMENT cho bảng `tblvideo`
 --
 ALTER TABLE `tblvideo`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

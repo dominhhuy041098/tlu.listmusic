@@ -1,8 +1,8 @@
 <div id="left">
             <div id="left1">
-            <h1>Bài hát New & HOT*** >></h1>
+           <h1> <a href="baihat.php">Bài hát New & HOT*** >></a></h1>
                     <?php
-                        $query_baihat="Select * FROM tblbaihat ORDER BY ordernum DESC LIMIT 10";
+                        $query_baihat="Select * FROM tblbaihat ORDER BY ordernum DESC LIMIT 6";
                         $results_baihat=mysqli_query($dbc,$query_baihat);
                         kt_query($results_baihat,$query_baihat);
                     ?>
@@ -21,7 +21,7 @@
             </ul></div>
           
             <div id="left2">
-            <h1>Video nổi bật>></h1>
+            <h1><a href="video.php">Video nổi bật>></a></h1>
             
             <?php 
                     $query_video_one="SELECT * FROM tblvideo ordernum WHERE status=1 ORDER BY ordernum";

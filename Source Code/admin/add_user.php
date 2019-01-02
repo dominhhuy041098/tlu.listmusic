@@ -98,9 +98,15 @@
 					}
 					else
 					{
-											
-						$query_in="INSERT INTO tbluser(taikhoan,matkhau,hoten,dienthoai,email,diachi,status)
-						VALUES('{$taikhoan}','{$matkhau}','{$hoten}','{$dienthoai}','{$email}','{$diachi}',{$status})";
+						$chrole=$_POST['chrole'];
+						$countcheckrole=count($chrole);
+						$del_role='';
+						for ($i=0; $i < $countcheckrole; $i++) 
+						{ 
+							$del_role=$del_role.','.$chrole[$i];	
+						}						
+						$query_in="INSERT INTO tbluser(taikhoan,matkhau,hoten,dienthoai,email,diachi,role,status)
+						VALUES('{$taikhoan}','{$matkhau}','{$hoten}','{$dienthoai}','{$email}','{$diachi}','{$del_role}',{$status})";
 						$results_in=mysqli_query($dbc,$query_in);
 						kt_query($results_in,$query_in);
 						if(mysqli_affected_rows($dbc)==1)
@@ -196,7 +202,31 @@
 						echo "<p class='required'>Địa chỉ không để trống</p>";
 					}
 				?>
-			</div>	
+			</div>
+			<div class="form-group">
+				<label>Chọn quyền</label>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+						<input type="checkbox" name="chkfull" onclick="checkall('chrole', this)">
+						<label>Full quyền</label>
+					</div>
+				</div>
+				<div class="row">
+					<?php 
+						foreach ($mang as $mang_add) 
+						{
+						?>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<div style="background: #ccc; margin-bottom:15px;" >
+								<input type="checkbox" name="chrole[]" class="chrole" value="<?php echo $mang_add['title'].'-'.$mang_add['link_themmoi'].'-'.$mang_add['link_list'].'-'.$mang_add['link_edit'].'-'.$mang_add['link_delete']; ?>">
+								<label><?php echo $mang_add['title']; ?></label>
+							</div>
+						</div>
+						<?php
+						}
+					?>
+				</div>
+			</div>					
 						
 			<div class="form-group">
 				<label style="display:block;">Trạng thái</label>

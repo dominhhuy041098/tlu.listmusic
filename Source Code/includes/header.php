@@ -19,12 +19,7 @@
             <li><img src="image/Music-icon.png" height="40px" width="40px">
             <img src="image/512.png" height="40px" width="40px"></li>
             <li><a href="index.php" title="Trang chủ" class="active">Trang chủ</a></li>
-            <li><a href="baihat.php" title="Bài hát">Bài hát</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Mới</a></li>
-                    <li><a href="#">HOT***</a></li>
-                </ul>
-            </li>
+            <li><a href="baihat.php" title="Bài hát">Bài hát</a></li>
             <li><a href="#" title="Chủ đề">Chủ đề</a>
                 <ul class="sub-menu">
                     <li><a href="#">Tình yêu</a></li>
@@ -34,17 +29,12 @@
                     <li><a href="#">Gym</a></li>
                 </ul>
             </li>
-            <li><a href="#" title="Nghệ sĩ">Nghệ sĩ</a></li>
+            <li><a href="nghesi.php" title="Nghệ sĩ">Nghệ sĩ</a></li>
             <li><a href="#" title="BXH">BXH</a>
                 
             </li>
             
-            <li><a href="#" title="Tài khoản">Tài khoản</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Đăng nhập</a></li>
-                    <li><a href="#">Đăng ký</a></li>
-                </ul>
-            </li>
+            <li><a href="video.php" title="Video">Video</a></li>
             
             <input type="text" name="search" placeholder="Search.." value=><input type="button" name="TimKiem" onclick="" value="Tìm"></ul>
         

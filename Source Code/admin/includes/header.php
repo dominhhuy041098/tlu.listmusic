@@ -1,7 +1,91 @@
 <?php session_start();
+include('../inc/myconnect.php');
+include('config/config.php');
 if(!isset($_SESSION['uid'])){
     header('Location: login.php');
-}?>
+}
+else
+{
+    $sqlcheckrole="SELECT * FROM tbluser WHERE id={$_SESSION['uid']}";
+    $checkrole=mysqli_query($dbc,$sqlcheckrole);
+    $checkrole_row=mysqli_fetch_assoc($checkrole);
+    $current_url=$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI'];
+    $current_tach=explode('/',$current_url);
+    $tm=count($current_tach);    
+    $dem_mt=1;
+    foreach ($current_tach as $current_tach2) 
+    {
+        if($dem_mt == $tm)
+        {
+            if(isset($_GET['id']) || isset($_GET['s']))
+            {
+                $current_tach2_id=explode('?',$current_tach2);                                         
+            }
+            $mangthaythe=array();
+            $tachcheckrole=explode(',',$checkrole_row['role']);
+            $demthay=1;
+            foreach ($tachcheckrole as $tachcheckrole_it) 
+            {
+                if($demthay>1)
+                {
+                    $tachcheckrole2=explode('-',$tachcheckrole_it);
+                    $mangthaythe[]=array(
+                        'link1' => $tachcheckrole2[1],
+                        'link2' => $tachcheckrole2[2],
+                        'link3' => $tachcheckrole2[3],
+                        'link4' => $tachcheckrole2[4], 
+                    );
+                    $okc=0;
+                    foreach ($mangthaythe as $itemthay) 
+                    {
+                        if(isset($_GET['id']))
+                        {
+                            if($current_tach2_id[0] == $itemthay['link3'] || $current_tach2_id[0] == $itemthay['link4'])
+                            {
+                                $okc=1;
+                                break;
+                            }
+                        } 
+                        elseif(isset($_GET['s'])) 
+                        {
+                            if($current_tach2_id[0] == $itemthay['link2'])
+                            {
+                                $okc=1;
+                                break;
+                            }                        
+                        }                      
+                        else
+                        {
+                            if($current_tach2 == $itemthay['link1'] || $current_tach2 == $itemthay['link2'])
+                            {
+                                $okc=1;
+                                break;
+                            }
+                        }
+                    }                    
+                } 
+                $demthay++;                
+            }
+        }
+        $dem_mt++;
+    }
+    if($okc <> 1)
+    {
+        $dem_mtch=1;
+        foreach ($current_tach as $current_tach_ch2) 
+        {
+            if($dem_mtch == $tm)
+            {
+                if($current_tach_ch2!="index.php")
+                {
+                    header('Location: index.php');
+                }
+            }
+            $dem_mtch++;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

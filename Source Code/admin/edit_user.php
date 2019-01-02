@@ -70,13 +70,19 @@
 				$status=$_POST['status'];
 				if(empty($errors))
 				{	
-																	
+					$chrole=$_POST['chrole'];
+						$countcheckrole=count($chrole);
+						$del_role='';
+						for ($i=0; $i < $countcheckrole; $i++) 
+						{ 
+							$del_role=$del_role.','.$chrole[$i];	
+						}												
 					$query_in="UPDATE tbluser
 								SET hoten='{$hoten}',
 									dienthoai='{$dienthoai}',
 									email='{$email}',
 									diachi='{$diachi}',	
-						
+									role='{$del_role}',
 									status={$status}
 								WHERE id={$id}	
 							";
@@ -96,13 +102,13 @@
 					$message="<p class='required'>Bạn hãy nhập đầy đủ thông tin</p>";
 				}
 			}
-			$query_id="SELECT taikhoan,hoten,dienthoai,email,diachi,status FROM tbluser WHERE id={$id}";
+			$query_id="SELECT taikhoan,hoten,dienthoai,email,diachi,role,status FROM tbluser WHERE id={$id}";
 			$results_id=mysqli_query($dbc,$query_id);
 			kt_query($results_id,$query_id);
 			//Kiểm tra xem ID có tồn tại không
 			if(mysqli_num_rows($results_id)==1)
 			{
-				list($taikhoan,$hoten,$dienthoai,$email,$diachi,$status)=mysqli_fetch_array($results_id,MYSQLI_NUM);				
+				list($taikhoan,$hoten,$dienthoai,$email,$diachi,$role,$status)=mysqli_fetch_array($results_id,MYSQLI_NUM);				
 			}
 			else
 			{
@@ -167,7 +173,40 @@
 					}
 				?>
 			</div>
-					
+			<label>Chọn quyền</label>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+						<input type="checkbox" name="chkfull" onclick="checkall('chrole', this)">
+						<label>Full quyền</label>
+					</div>
+				</div>
+				<div class="row">
+					<?php 
+						foreach ($mang as $mang_add) 
+						{
+							$edit_role=explode(',',$role);
+							$ok=0;
+							foreach ($edit_role as $itemrole) 
+							{
+								$edit_ht=$mang_add['title'].'-'.$mang_add['link_themmoi'].'-'.$mang_add['link_list'].'-'.$mang_add['link_edit'].'-'.$mang_add['link_delete'];
+								if($edit_ht == $itemrole)
+								{
+									$ok=1;
+									break;
+								}
+							}
+						?>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<div style="background: #ccc; margin-bottom:15px;" >
+								<input type="checkbox" name="chrole[]" <?php if($ok==1){ ?>checked="checked"<?php } ?> class="chrole" value="<?php echo $mang_add['title'].'-'.$mang_add['link_themmoi'].'-'.$mang_add['link_list'].'-'.$mang_add['link_edit'].'-'.$mang_add['link_delete']; ?>">
+								<label><?php echo $mang_add['title']; ?></label>
+							</div>
+						</div>
+						<?php
+						}
+					?>
+				</div>
+			</div>					
 			<div class="form-group">
 				<label style="display:block;">Trạng thái</label>
 				<?php 

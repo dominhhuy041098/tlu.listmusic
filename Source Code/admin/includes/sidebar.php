@@ -2,62 +2,35 @@
                 <ul class="nav navbar-nav side-nav">
                     <li style="background:#1b926c;color:#fff;">
                         <a href="index.php" style="color:#fff;"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>                    
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_cd"><i class="fa fa-fw fa-file"></i> Chủ đề <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_cd" class="collapse">
+                    </li>
+                    <?php
+                    $sql_pq="SELECT * FROM tbluser WHERE id={$_SESSION['uid']}"; 
+                    $query_pq=mysqli_query($dbc,$sql_pq);  
+                    $query_row=mysqli_fetch_assoc($query_pq); 
+                    $dem_pg=1;
+                    foreach($mang as $mang_sidebar){ 
+                    $tach_role=explode(',',$query_row['role']);
+                foreach ($tach_role as $tach_role1) 
+                {
+                    $tach_role2=explode('-',$tach_role1);
+                    foreach ($tach_role2 as $tach_role3) 
+                    {
+                        if($mang_sidebar['title'] == $tach_role3)
+                        {
+                        ?>
+                         <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_<?php echo $dem_pg;?>"><i class="fa fa-fw fa-file"></i> <?php echo $mang_sidebar['title']; ?> <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_<?php echo $dem_pg;?>" class="collapse">
                             <li>
-                                <a href="add_cd.php">Thêm mới</a>
+                                <a href="<?php echo $mang_sidebar['link_themmoi'];?>">Thêm mới</a>
                             </li>
                             <li>
-                                <a href="list_cd.php">Danh sách</a>
+                                <a href="<?php echo $mang_sidebar['link_list'];?>">Danh sách</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_ns"><i class="fa fa-fw fa-file"></i> Nghệ Sĩ <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_ns" class="collapse">
-                            <li>
-                                <a href="add_ns.php">Thêm mới</a>
-                            </li>
-                            <li>
-                                <a href="list_ns.php">Danh sách</a>
-                            </li>
-                        </ul>
-                    </li> 
-					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bh"><i class="fa fa-fw fa-file"></i> Bài hát <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_bh" class="collapse">
-                            <li>
-                                <a href="add_bh.php">Thêm mới</a>
-                            </li>
-                            <li>
-                                <a href="list_bh.php">Danh sách</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_vd"><i class="fa fa-fw fa-file"></i> Video <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_vd" class="collapse">
-                            <li>
-                                <a href="add_vd.php">Thêm mới</a>
-                            </li>
-                            <li>
-                                <a href="list_vd.php">Danh sách</a>
-                            </li>
-                        </ul>
-                    </li>
-					
-					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_u"><i class="fa fa-fw fa-file"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_u" class="collapse">
-                            <li>
-                                <a href="add_user.php">Thêm mới</a>
-                            </li>
-                            <li>
-                                <a href="list_user.php">Danh sách</a>
-                            </li>
-                        </ul>
-                    </li>				
+                        <?php }}} $dem_pg++;} ?>                    
+                   
+                   
                 </ul>
             </div>

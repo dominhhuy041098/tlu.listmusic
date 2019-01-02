@@ -183,6 +183,7 @@ input[type="button"]{
     width: 180px;
     height: 100px;
     float:left;
+    
 }
 
 #main #right ul{
@@ -217,6 +218,7 @@ input[type="button"]{
 #main #left #left3,#main #left #left2,#main #left #left1{
     clear: left;
 }
+
 #main #left .list-video{
     height:150px;
             width:838px;

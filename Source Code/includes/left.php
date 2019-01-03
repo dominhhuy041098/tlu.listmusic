@@ -2,7 +2,7 @@
             <div id="left1">
            <h1> <a href="baihat.php">Bài hát New & HOT*** >></a></h1>
                     <?php
-                        $query_baihat="Select * FROM tblbaihat ORDER BY ordernum DESC LIMIT 6";
+                        $query_baihat="Select * FROM tblbaihat ORDER BY id DESC LIMIT 6";
                         $results_baihat=mysqli_query($dbc,$query_baihat);
                         kt_query($results_baihat,$query_baihat);
                     ?>
@@ -29,9 +29,10 @@
                     $query_video_two=mysqli_fetch_assoc($results_video_one);
                     $str_one=explode('=',$query_video_two['link']);
                 ?></div>
-                <iframe width="840px" height="400px" class="embed-player" src="http://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allowfullscreen></iframe>
+            
+                    <iframe width="840px" height="400px" class="embed-player" src="http://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allowfullscreen></iframe>
                     <?php 
-                        $query_video="SELECT * FROM tblvideo WHERE status=1";
+                        $query_video="SELECT * FROM tblvideo";
                         $results_video=mysqli_query($dbc,$query_video);
                         kt_query($results_video,$query_video);
                                                    
@@ -56,7 +57,7 @@
                                         </ul>
                                         
                 					<div id="left3">
-                			              <h1>Bảng xếp hạng>></h1>
+                			              <h1><a href="bxh.php">Bảng xếp hạng>></a></h1>
                                           <?php
                         $query_bxh="Select * FROM tblbaihat ORDER BY LuotNghe DESC LIMIT 6";
                         $results_bxh=mysqli_query($dbc,$query_bxh);

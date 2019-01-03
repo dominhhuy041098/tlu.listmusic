@@ -1,109 +1,28 @@
-<?php include('includes/header.php');?>
+<?php include('includes/header.php'); ?>
 <div id="main">
-    <div class="container"  style="margin-top :200px;" >
-        <div class="row">
-          <div class="col-md-3" >
-            <div class="card" style="margin :18px;">
-                <img src="image/1457576967042_600.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Rhymastic</h5>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-md-3" >
-            <div class="card" style="margin :18px;">
-                <img src="image/1531383252985_600.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Drake</h5>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-md-3">
-            <div class="card" style="margin :18px;" >
-                <img src="image/1529401377989_600.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Chi Dân</h5>
-                </div>
-            </div>
-             </div>
-
-            <div class="col-md-3">
-            <div class="card" style="margin :18px;">
-                <img src="image/1527560526533_600.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">junn Đăng Dũng</h5>
-                </div>
+    <div id="left">
+    <div id="left1">
+            <h1>Tất cả nghệ sĩ</h1>
+                    <?php
+                        $query_nghesi="Select * FROM tblnghesi where status=1";
+                        $results_nghesi=mysqli_query($dbc,$query_nghesi);
+                        kt_query($results_nghesi,$query_nghesi);
+                    ?>
+                <ul>
+                    <?php 
+                         while ($nghesi=mysqli_fetch_array($results_nghesi,MYSQLI_ASSOC)) 
+                         { 
+                         ?>
+                          <li><a href="search.php?search=<?php echo $nghesi['NgheSi']?>&submit=Tìm"><img src="<?php echo $nghesi['anh'];?>"><p><strong><?php echo $nghesi['NgheSi'];?></strong></p></a></li>                       
+                         <?php 
+                         }
+                     ?>          
                 
-            </div>
-              
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="margin :18px;">
-                    <img src="image/1521452200484_600.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">K-ICM</h5>
-                    </div>
-                </div>
-            </div>
+                    
+            
+            </ul></div>
+           </div>
+    <?php include('includes/right.php');?>
 
-          <div class="col-md-3">
-            <div class="card" style="margin :18px;">
-                    <img src="image/1526060499277_600.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Sơn Tùng MTP</h5>
-                    </div>
-                </div>
-            </div>
-          <div class="col-md-3">
-            <div class="card" style="margin :18px;">
-                    <img src="image/1510940826956_600.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">onlyC</h5>
-                    </div>
-                </div>
-            </div>
-         
-          <div class="col-md-3">
-            <div class="card" style="margin :18px;">
-                    <img src="image/1495165872455_600.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karik</h5>
-                    </div>
-                </div>
-            </div>
-        </div>      
-    </div>
-   
-<?php include('includes/footer.php');?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<? //php include('includes/header.php');?>
-<!-- <div id="main">
-    <?php //include('includes/left.php'); ?>
-    <div id="right">
-             
-    <div><h1>Nghệ sĩ Hot>></h1>
-    
-         
-           
-        </div>
-    </div>
-    </div> -->
-
-<?php
-//include('includes/footer.php');?>
+</div>
+<?php include('includes/footer.php'); ?>

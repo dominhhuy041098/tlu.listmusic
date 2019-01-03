@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 02, 2019 lúc 01:48 PM
+-- Thời gian đã tạo: Th1 03, 2019 lúc 11:19 AM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 5.6.38
 
@@ -46,28 +46,28 @@ CREATE TABLE `tblbaihat` (
 --
 
 INSERT INTO `tblbaihat` (`id`, `BaiHat`, `ChuDe`, `NgheSi`, `ordernum`, `status`, `noidung`, `anh`, `anh_thumb`, `LuotNghe`) VALUES
-(20, 'What Do You Mean', 'Âu Mỹ', 'Justin biebers', 10, 1, 'upload/What Do You Mean Acoustic Vers... - Justin Bieber (NhacPro.net).mp3', 'upload/j.jpg', 'upload/resized/j_thumb.jpg', 0),
-(21, 'Baby', 'Âu Mỹ', 'Justin biebers', 2, 1, 'upload/Baby - Justin Bieber Ludacris (NhacPro.net).mp3', 'upload/220px-Babycoverart.jpg', 'upload/resized/220px-Babycoverart_thumb.jpg', 0),
-(23, 'Rồi anh sẽ quên', 'Việt Nam', 'Đàm Vĩnh Hưng', 1, 1, 'upload/Roi Anh Se Quen New Version Re... - Dam Vinh Hung (NhacPro.net).mp3', 'upload/512 - Copy.png', 'upload/resized/512 - Copy_thumb.png', 0),
-(24, 'Chạy ngay đi', 'EDM', 'Sơn Tùng', 6, 1, 'upload/Chay Ngay Di Onionn Remix - Son Tung M TP (NhacPro.net)_2.mp3', 'upload/maxresdefault (1).jpg', 'upload/resized/maxresdefault (1)_thumb.jpg', 0),
-(25, 'Thanh xuân của chúng ta', 'Tình yêu', 'Bùi Anh Tuấn', 4, 1, 'upload/Thanh Xuan Cua Chung Ta - Bui Anh Tuan Bao Anh (NhacPro.net).mp3', 'upload/dd.jpg', 'upload/resized/dd_thumb.jpg', 0),
-(26, 'Siren', 'Coffee Time', 'Sunmi', 10, 1, 'upload/Siren - Sunmi (NhacPro.net).mp3', 'upload/maxresdefault (3).jpg', 'upload/resized/maxresdefault (3)_thumb.jpg', 0),
-(27, 'Tan', 'Coffee Time', 'Tuấn Hưng', 9, 1, 'upload/Tan - Tuan Hung (NhacPro.net).mp3', 'upload/maxresdefault (4).jpg', 'upload/resized/maxresdefault (4)_thumb.jpg', 0),
-(28, 'Lip and Hip ', 'EDM', 'Hyuna', 10, 1, 'upload/LipHip3DAudio-HyunA-5468910.mp3', 'upload/maxresdefault (5).jpg', 'upload/resized/maxresdefault (5)_thumb.jpg', 0),
-(29, 'Gashina', 'Gym', 'Sunmi', 11, 1, 'upload/GashinaAreiaRemix-Summi-5302721.mp3', 'upload/original.png', 'upload/resized/original_thumb.png', 0),
-(30, 'Far away', 'Coffee Time', 'Karik', 15, 1, 'upload/FarAway-KayTranTronieNgo-5810154.mp3', 'upload/maxresdefault (6).jpg', 'upload/resized/maxresdefault (6)_thumb.jpg', 0),
-(31, 'Thành phố xa lạ', 'Coffee Time', 'Tóc Tiên', 34, 1, 'upload/ThanhPhoXaLa-PhungKhanhLinh-5791553.mp3', 'upload/ttt.jpg', 'upload/resized/ttt_thumb.jpg', 0),
-(32, '24h', 'Coffee Time', 'Mr.Siro', 34, 1, 'upload/ThanhPhoXaLa-PhungKhanhLinh-5791553.mp3', 'upload/1544596919931.jpg', 'upload/resized/1544596919931_thumb.jpg', 0),
-(34, 'Let Me Love You (Zedd Remix) ', 'Coffee Time', 'Justin biebers', 15, 1, 'upload/Let Me Love You Zedd Remix - DJ Snake Zedd Justin Bieber (NhacPro.net).mp3', 'upload/DJ-Snake-Justin-Bieber-Let-me-love-you.jpg', 'upload/resized/DJ-Snake-Justin-Bieber-Let-me-love-', 0),
-(36, 'Where Are Ü Now ', 'Coffee Time', 'Justin biebers', 15, 1, 'upload/Where Are U Now - Justin Bieber Jack U (NhacPro.net).mp3', 'upload/00078226.jpg', 'upload/resized/00078226_thumb.jpg', 0),
-(37, 'Despacito (Remix) ', 'EDM', 'Justin biebers', 16, 1, 'upload/Despacito Remix - Luis Fonsi Daddy Yankee Justin... (NhacPro.net).mp3', 'upload/k.jpg', 'upload/resized/k_thumb.jpg', 0),
-(38, 'Nonstop Vũ Điệu Cồng Chiêng 2015', 'EDM', 'Tóc Tiên', 17, 1, 'upload/Nonstop Vu Dieu Cong Chieng 20... - DJ Bao Linh (NhacPro.net).mp3', 'upload/hqdefault.jpg', 'upload/resized/hqdefault_thumb.jpg', 0),
-(39, 'Quan Trọng Là Thần Thái', 'Gym', 'Karik', 18, 1, 'upload/Quan Trong La Than Thai - OnlyC Karik (NhacPro.net).mp3', 'upload/3_98516.jpg', 'upload/resized/3_98516_thumb.jpg', 0),
-(40, 'Càng Níu Giữ Càng Dễ Mất', 'Mưa', 'Mr.Siro', 20, 1, 'upload/Cang Niu Giu Cang De Mat - Mr Siro (NhacPro.net).mp3', 'upload/ss.jpg', 'upload/resized/ss_thumb.jpg', 0),
-(41, 'Babe', 'Gym', 'Hyuna', 19, 1, 'upload/Babe - HyunA (NhacPro.net).mp3', 'upload/0.jpg', 'upload/resized/0_thumb.jpg', 0),
-(42, 'Nắm Lấy Tay Anh', 'Tình yêu', 'Tuấn Hưng', 21, 1, 'upload/Nam Lay Tay Anh - Tuan Hung (NhacPro.net).mp3', 'upload/tuan-hung.jpg', 'upload/resized/tuan-hung_thumb.jpg', 0),
-(43, 'Lạc trôi', 'Mưa', 'Sơn Tùng', 22, 1, 'upload/Lac Troi Beat - Son Tung M TP (NhacPro.net).mp3', 'upload/ds.jpg', 'upload/resized/ds_thumb.jpg', 0),
-(44, 'Cant stop the feeling', 'Coffee Time', 'Justin biebers', 23, 1, 'upload/Can t Stop The Feeling Film Ve... - Justin Timberlake Anna Kendric... (NhacPro.net).mp3', 'upload/dsss.jpg', 'upload/resized/dsss_thumb.jpg', 0);
+(20, 'What Do You Mean', 'Âu Mỹ', 'Justin biebers', 10, 1, 'upload/What Do You Mean Acoustic Vers... - Justin Bieber (NhacPro.net).mp3', 'upload/j.jpg', 'upload/resized/j_thumb.jpg', 70),
+(21, 'Baby', 'Âu Mỹ', 'Justin biebers', 2, 1, 'upload/Baby - Justin Bieber Ludacris (NhacPro.net).mp3', 'upload/220px-Babycoverart.jpg', 'upload/resized/220px-Babycoverart_thumb.jpg', 71),
+(23, 'Rồi anh sẽ quên', 'Việt Nam', 'Đàm Vĩnh Hưng', 1, 1, 'upload/Roi Anh Se Quen New Version Re... - Dam Vinh Hung (NhacPro.net).mp3', 'upload/512 - Copy.png', 'upload/resized/512 - Copy_thumb.png', 70),
+(24, 'Chạy ngay đi', 'EDM', 'Sơn Tùng', 6, 1, 'upload/Chay Ngay Di Onionn Remix - Son Tung M TP (NhacPro.net)_2.mp3', 'upload/maxresdefault (1).jpg', 'upload/resized/maxresdefault (1)_thumb.jpg', 70),
+(25, 'Thanh xuân của chúng ta', 'Tình yêu', 'Bùi Anh Tuấn', 4, 1, 'upload/Thanh Xuan Cua Chung Ta - Bui Anh Tuan Bao Anh (NhacPro.net).mp3', 'upload/dd.jpg', 'upload/resized/dd_thumb.jpg', 70),
+(26, 'Siren', 'Coffee Time', 'Sunmi', 10, 1, 'upload/Siren - Sunmi (NhacPro.net).mp3', 'upload/maxresdefault (3).jpg', 'upload/resized/maxresdefault (3)_thumb.jpg', 71),
+(27, 'Tan', 'Coffee Time', 'Tuấn Hưng', 9, 1, 'upload/Tan - Tuan Hung (NhacPro.net).mp3', 'upload/maxresdefault (4).jpg', 'upload/resized/maxresdefault (4)_thumb.jpg', 71),
+(28, 'Lip and Hip ', 'EDM', 'Hyuna', 10, 1, 'upload/LipHip3DAudio-HyunA-5468910.mp3', 'upload/maxresdefault (5).jpg', 'upload/resized/maxresdefault (5)_thumb.jpg', 70),
+(29, 'Gashina', 'Gym', 'Sunmi', 11, 1, 'upload/GashinaAreiaRemix-Summi-5302721.mp3', 'upload/original.png', 'upload/resized/original_thumb.png', 71),
+(30, 'Far away', 'Coffee Time', 'Karik', 15, 1, 'upload/FarAway-KayTranTronieNgo-5810154.mp3', 'upload/maxresdefault (6).jpg', 'upload/resized/maxresdefault (6)_thumb.jpg', 73),
+(31, 'Thành phố xa lạ', 'Coffee Time', 'Tóc Tiên', 34, 1, 'upload/ThanhPhoXaLa-PhungKhanhLinh-5791553.mp3', 'upload/ttt.jpg', 'upload/resized/ttt_thumb.jpg', 70),
+(32, '24h', 'Coffee Time', 'Mr.Siro', 34, 1, 'upload/ThanhPhoXaLa-PhungKhanhLinh-5791553.mp3', 'upload/1544596919931.jpg', 'upload/resized/1544596919931_thumb.jpg', 70),
+(34, 'Let Me Love You (Zedd Remix) ', 'Coffee Time', 'Justin biebers', 15, 1, 'upload/Let Me Love You Zedd Remix - DJ Snake Zedd Justin Bieber (NhacPro.net).mp3', 'upload/DJ-Snake-Justin-Bieber-Let-me-love-you.jpg', 'upload/resized/DJ-Snake-Justin-Bieber-Let-me-love-', 70),
+(36, 'Where Are Ü Now ', 'Coffee Time', 'Justin biebers', 15, 1, 'upload/Where Are U Now - Justin Bieber Jack U (NhacPro.net).mp3', 'upload/00078226.jpg', 'upload/resized/00078226_thumb.jpg', 70),
+(37, 'Despacito (Remix) ', 'EDM', 'Justin biebers', 16, 1, 'upload/Despacito Remix - Luis Fonsi Daddy Yankee Justin... (NhacPro.net).mp3', 'upload/k.jpg', 'upload/resized/k_thumb.jpg', 70),
+(38, 'Nonstop Vũ Điệu Cồng Chiêng 2015', 'EDM', 'Tóc Tiên', 17, 1, 'upload/Nonstop Vu Dieu Cong Chieng 20... - DJ Bao Linh (NhacPro.net).mp3', 'upload/hqdefault.jpg', 'upload/resized/hqdefault_thumb.jpg', 70),
+(39, 'Quan Trọng Là Thần Thái', 'Gym', 'Karik', 18, 1, 'upload/Quan Trong La Than Thai - OnlyC Karik (NhacPro.net).mp3', 'upload/3_98516.jpg', 'upload/resized/3_98516_thumb.jpg', 70),
+(40, 'Càng Níu Giữ Càng Dễ Mất', 'Mưa', 'Mr.Siro', 20, 1, 'upload/Cang Niu Giu Cang De Mat - Mr Siro (NhacPro.net).mp3', 'upload/ss.jpg', 'upload/resized/ss_thumb.jpg', 70),
+(41, 'Babe', 'Gym', 'Hyuna', 19, 1, 'upload/Babe - HyunA (NhacPro.net).mp3', 'upload/0.jpg', 'upload/resized/0_thumb.jpg', 70),
+(42, 'Nắm Lấy Tay Anh', 'Tình yêu', 'Tuấn Hưng', 21, 1, 'upload/Nam Lay Tay Anh - Tuan Hung (NhacPro.net).mp3', 'upload/tuan-hung.jpg', 'upload/resized/tuan-hung_thumb.jpg', 70),
+(43, 'Lạc trôi', 'Mưa', 'Sơn Tùng', 22, 1, 'upload/Lac Troi Beat - Son Tung M TP (NhacPro.net).mp3', 'upload/ds.jpg', 'upload/resized/ds_thumb.jpg', 71),
+(44, 'Cant stop the feeling', 'Coffee Time', 'Justin biebers', 23, 1, 'upload/Can t Stop The Feeling Film Ve... - Justin Timberlake Anna Kendric... (NhacPro.net).mp3', 'upload/dsss.jpg', 'upload/resized/dsss_thumb.jpg', 78);
 
 -- --------------------------------------------------------
 
@@ -94,6 +94,31 @@ INSERT INTO `tblchude` (`id`, `ChuDe`, `ordernum`, `Status`) VALUES
 (5, 'Gym', 5, 1),
 (6, 'Việt Nam', 6, 0),
 (7, 'Âu Mỹ', 7, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tblgopy`
+--
+
+CREATE TABLE `tblgopy` (
+  `id` int(10) NOT NULL,
+  `hoten` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `dienthoai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `diachi` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `noidung` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `title` int(10) NOT NULL,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tblgopy`
+--
+
+INSERT INTO `tblgopy` (`id`, `hoten`, `dienthoai`, `diachi`, `email`, `noidung`, `title`, `status`) VALUES
+(1, 'Đỗ Hương Trà', '01694014958', '21', 'huongtra.saejin@gmail.com', 'ff', 31, 0),
+(2, 'Đỗ Hương Trà', '01694014958', '21', 'huongtra.saejin@gmail.com', 'hay', 31, 0);
 
 -- --------------------------------------------------------
 
@@ -201,6 +226,12 @@ ALTER TABLE `tblchude`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tblgopy`
+--
+ALTER TABLE `tblgopy`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tblnghesi`
 --
 ALTER TABLE `tblnghesi`
@@ -232,7 +263,13 @@ ALTER TABLE `tblbaihat`
 -- AUTO_INCREMENT cho bảng `tblchude`
 --
 ALTER TABLE `tblchude`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `tblgopy`
+--
+ALTER TABLE `tblgopy`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tblnghesi`

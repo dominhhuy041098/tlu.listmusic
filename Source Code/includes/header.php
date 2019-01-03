@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="js/jquery.js"></script>
     <script src="js/c.js"></script>
-    
+   
 </head>
 <body>
     <div id="menu_top">
@@ -20,22 +20,14 @@
             <img src="image/512.png" height="40px" width="40px"></li>
             <li><a href="index.php" title="Trang chủ" class="active">Trang chủ</a></li>
             <li><a href="baihat.php" title="Bài hát">Bài hát</a></li>
-            <li><a href="#" title="Chủ đề">Chủ đề</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Tình yêu</a></li>
-                    <li><a href="#">EDM</a></li>
-                    <li><a href="#">CoffeeTime</a></li>
-                    <li><a href="#">Mưa</a></li>
-                    <li><a href="#">Gym</a></li>
-                </ul>
-            </li>
+            <li><a href="chude.php" title="Chủ đề">Chủ đề</a></li>
             <li><a href="nghesi.php" title="Nghệ sĩ">Nghệ sĩ</a></li>
-            <li><a href="#" title="BXH">BXH</a>
+            <li><a href="bxh.php" title="BXH">BXH</a>
                 
             </li>
             
             <li><a href="video.php" title="Video">Video</a></li>
-            
-            <input type="text" name="search" placeholder="Search.." value=><input type="button" name="TimKiem" onclick="" value="Tìm"></ul>
-        
+            <form id="t" name="frmsearch" method="GET" action="search.php">
+            <input type="text" name="search" placeholder="Search.." value=><input type="submit" name="submit" value="Tìm" style=" width: 50px;padding: 10px;right:10px;"></ul>
+            </form>
     </div>
